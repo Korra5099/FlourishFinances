@@ -8,27 +8,25 @@
 
 import SwiftUI
 struct ContentView: View {
+    @State private var name = ""
+        @State private var email = ""
+        @State private var password = ""
     var body: some View {
         NavigationView {
             ZStack {
-                
                 Form {
+                
                     Section(header: Text("User Info")) {
-                        Text ("Name")
-                        Text("Email")
-                        Text("Password")
+                        TextField("Name", text: $name)
+                        TextField("Email", text: $email)
+                        SecureField("Password", text: $password)
                     }
-                    
-                    NavigationLink(destination: Text("Subscription Page")) {
+                    NavigationLink(destination: SubscriptionView(name: name, email: email, password: password)) {
                         Text("Submit")
-                        
                     }
                     .navigationTitle(Text("Sign Up"))
                 }
             }
-            
-            
-            
             
             .padding()
             
@@ -36,7 +34,7 @@ struct ContentView: View {
     }
     }
     
-    
+
 #Preview {
     ContentView()
 }
