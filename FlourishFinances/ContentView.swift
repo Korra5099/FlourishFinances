@@ -23,10 +23,26 @@ struct ContentView: View {
                     
                 }
             }
+        ZStack {
+            
+            Color("Green")
+                .edgesIgnoringSafeArea(.all)
+    
+        VStack {
+            Image(systemName: "globe")
+                .imageScale(.large)
+                .foregroundStyle(.tint)
+            Text("change 1")
+            Text("change 2")
+            Text("change 3")
+            Text("change 4/khira")
+            Text("change 4-Rona")
+         
         }
         
         
         .padding()
+        }
     }
 }
     
