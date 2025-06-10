@@ -19,8 +19,9 @@ struct ContentView: View {
                         Text("Password")
                     }
                     
-                    NavigationLink(destination: Text("Subscription Page")) {
+                    NavigationLink(destination: SubcriptionPage()){
                         Text("Submit")
+                        
                         
                     }
                     .navigationTitle(Text("Sign Up"))
