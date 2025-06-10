@@ -10,51 +10,33 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView {
-            Form {
-                Section(header: Text("User Info")) {
-                    Text("Name")
-                    Text("Email")
-                    Text("Password")
-                }
-                NavigationLink(destination: Text("Destination")) {
-                    Text("Next Page")
-                }
-                VStack {
-                    
-                }
-            }
             ZStack {
                 
-                Color("Green")
-                    .edgesIgnoringSafeArea(.all)
-                
-                VStack {
-                    Image(systemName: "globe")
-                        .imageScale(.large)
-                        .foregroundStyle(.tint)
-                    Text("change 1")
-                    Text("change 2")
-                    Text("change 3")
-                    Text("change 4/khira")
-                    Text("change 4-Rona")
+                Form {
+                    Section(header: Text("User Info")) {
+                        Text ("Name")
+                        Text("Email")
+                        Text("Password")
+                    }
                     
+                    NavigationLink(destination: Text("Subscription Page")) {
+                        Text("Submit")
+                        
+                    }
+                    .navigationTitle(Text("Sign Up"))
                 }
             }
-        
-        .padding()
+            
+            
+            
+            
+            .padding()
+            
         }
     }
-}
+    }
     
-   
-                
-        
-            
-            
-            
-            
-
-
+    
 #Preview {
     ContentView()
 }
