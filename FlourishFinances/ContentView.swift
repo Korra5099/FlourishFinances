@@ -21,7 +21,7 @@ struct ContentView: View {
                         TextField("Email", text: $email)
                         SecureField("Password", text: $password)
                     }
-                    NavigationLink(destination: SubscriptionView(name: name, email: email, password: password)) {
+                    NavigationLink(destination: SubcriptionPage()) {
                         Text("Submit")
                         
                         
