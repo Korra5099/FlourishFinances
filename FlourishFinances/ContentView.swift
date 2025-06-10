@@ -5,23 +5,39 @@
 //  Created by Scholar on 6/9/25.
 //
 
-import SwiftUI
 
+import SwiftUI
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("change 1")
-            Text("change 2")
-            Text("change 3")
-            Text("change 4/khira")
-            Text("change 4-Rona")
+        NavigationView {
+            Form {
+                Section(header: Text("User Info")) {
+                    Text("Name")
+                    Text("Email")
+                    Text("Password")
+                }
+                NavigationLink(destination: Text("Destination")) {
+                    Text("Next Page")
+                }
+                VStack {
+                    
+                }
+            }
         }
+        
+        
         .padding()
     }
 }
+    
+   
+                
+        
+            
+            
+            
+            
+
 
 #Preview {
     ContentView()
