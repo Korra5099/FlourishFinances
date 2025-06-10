@@ -23,6 +23,8 @@ struct ContentView: View {
                     }
                     NavigationLink(destination: SubscriptionView(name: name, email: email, password: password)) {
                         Text("Submit")
+                        
+                        
                     }
                     .navigationTitle(Text("Sign Up"))
                 }
