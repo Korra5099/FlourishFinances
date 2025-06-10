@@ -9,6 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        ZStack {
+            Color("Mint")
+                .edgesIgnoringSafeArea(.all)
+    
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
@@ -18,8 +22,10 @@ struct ContentView: View {
             Text("change 3")
             Text("change 4/khira")
             Text("change 4-Rona")
+         
         }
         .padding()
+        }
     }
 }
 
