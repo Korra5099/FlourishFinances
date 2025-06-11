@@ -7,26 +7,36 @@
 
 import SwiftUI
 
-struct SubcriptionPage: View {
+struct SubscriptionPage: View {
     var name: String
     var email: String
     var password: String
-    
-    var body: some View {
 
-        Text("Welcome, \(name)!")
-            .font(.title)
-            .fontWeight(.heavy)
-        Text("Current Subscriptions:")
-            .fontWeight(.medium)
-        Spacer().frame(height:700)
-        GroupBox(label: Label) {
-            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Content")/*@END_MENU_TOKEN@*/
+    var body: some View {
+        VStack(alignment: .leading, spacing: 20) {
+            Text("Welcome, \(name)!")
+                .font(.title)
+                .fontWeight(.heavy)
+
+            Text("Current Subscriptions:")
+                .fontWeight(.medium)
+Spacer()
+            GroupBox(label: Text("Subscription Details")) {
+                VStack(alignment: .leading) {
+                    Text("Name: Spotify")
+                    Text("Subscription Type: Premium")
+                    Text("Status: Active")
+                    Text(verbatim: "Expiration Date: June 30, 2025")
+                    Spacer()
+                }
+                
+                .padding(.top, 5)
+            }
         }
-    
+        .padding()
     }
 }
 
 #Preview {
-    SubcriptionPage(name: "Khira", email: "khira@gmail.com", password: "password123")
+    SubscriptionPage(name: "Khira", email: "khira@example.com", password: "password123")
 }
