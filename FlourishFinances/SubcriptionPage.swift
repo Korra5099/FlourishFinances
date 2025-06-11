@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct SubcriptionPage: View {
-    @State private var name = ""
+    var name: String
+    var email: String
+    var password: String
+    
     var body: some View {
 
         
@@ -17,9 +20,10 @@ struct SubcriptionPage: View {
             .fontWeight(.heavy)
         
         Spacer().frame(height:700)
+        
     }
 }
 
 #Preview {
-    SubcriptionPage()
+    SubcriptionPage(name: "Khira", email: "khira@gmail.com", password: "password123")
 }

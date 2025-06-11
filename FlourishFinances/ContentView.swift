@@ -9,8 +9,8 @@
 import SwiftUI
 struct ContentView: View {
     @State private var name = ""
-        @State private var email = ""
-        @State private var password = ""
+    @State private var email = ""
+    @State private var password = ""
     var body: some View {
         NavigationView {
             ZStack {
@@ -21,7 +21,11 @@ struct ContentView: View {
                         TextField("Email", text: $email)
                         SecureField("Password", text: $password)
                     }
+
                     NavigationLink(destination: SubcriptionPage()) {
+
+                    NavigationLink(destination: SubcriptionPage(name: name, email: email, password: password)) {
+
                         Text("Submit")
                         
                         
