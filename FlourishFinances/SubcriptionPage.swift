@@ -14,13 +14,16 @@ struct SubcriptionPage: View {
     
     var body: some View {
 
-        
         Text("Welcome, \(name)!")
             .font(.title)
             .fontWeight(.heavy)
-        
+        Text("Current Subscriptions:")
+            .fontWeight(.medium)
         Spacer().frame(height:700)
-        
+        GroupBox(label: Label) {
+            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Content")/*@END_MENU_TOKEN@*/
+        }
+    
     }
 }
 
