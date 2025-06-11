@@ -14,28 +14,24 @@ struct SubscriptionPage: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
-            Text("Welcome, \(name)!")
-                .font(.title)
-                .fontWeight(.heavy)
-
-            Text("Current Subscriptions:")
-                .fontWeight(.medium)
+            Text("Subscription Page")
+                 .font(.system(size: 40))
+                 .fontWeight(.black)
 Spacer()
-            GroupBox(label: Text("Subscription Details")) {
-                VStack(alignment: .leading) {
-                    Text("Name: Spotify")
-                    Text("Subscription Type: Premium")
-                    Text("Status: Active")
-                    Text(verbatim: "Expiration Date: June 30, 2025")
-                    Spacer()
-                }
+            Button {
+
+            } label: {
+                Text("+")
+                    .font(.title)
+                    .fontWeight(.bold)
+            }
                 
                 .padding(.top, 5)
             }
         }
-        .padding()
+ 
     }
-}
+
 
 #Preview {
     SubscriptionPage(name: "Khira", email: "khira@example.com", password: "password123")
