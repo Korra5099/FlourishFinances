@@ -20,7 +20,7 @@ struct LoginPage: View{
                         .imageScale(.large)
                         .clipShape(Circle())
                     Spacer()
-                    Text ("Welcome")
+                    Text ("💸Welcome💸")
                         .padding(.leading, 12.0)
                         .frame(height: nil)
                         .multilineTextAlignment(.center)
