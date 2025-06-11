@@ -7,15 +7,21 @@
 
 import SwiftUI
 
-struct LoginPage: View {
+struct LoginPage: View{
+    @State private var name = ""
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
         Image("Image")
         .resizable(resizingMode: .stretch)
             .aspectRatio(contentMode: .fit)
             .imageScale(.large)
             .clipShape(Circle())
             Spacer()
+        TextField ("Enter Name Here", text: $name)
+            .padding(.leading)
+            .multilineTextAlignment(.center)
+            .font(.title)
+            
+        
     }
 }
 
