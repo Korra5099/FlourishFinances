@@ -15,24 +15,23 @@ struct SubscriptionPage: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             Text("Subscription Page")
-                 .font(.system(size: 40))
-                 .fontWeight(.black)
-Spacer()
-            Button {
+                .font(.system(size: 40))
+                .fontWeight(.black)
 
+            Spacer()
+
+            Button {
+                // Add subscription action here
             } label: {
                 Text("+")
                     .font(.title)
                     .fontWeight(.bold)
             }
-                
-                .padding(.top, 5)
-            }
+            .padding(.top, 5)
         }
- 
+        .padding()
     }
-
-
+}
 #Preview {
     SubscriptionPage(name: "Khira", email: "khira@example.com", password: "password123")
 }
