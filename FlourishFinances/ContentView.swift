@@ -15,27 +15,29 @@ struct ContentView: View {
         NavigationView {
             ZStack {
                 Form {
-                
+                    
                     Section(header: Text("User Info")) {
                         TextField("Name", text: $name)
                         TextField("Email", text: $email)
                         SecureField("Password", text: $password)
                     }
-                    NavigationLink(destination: SubcriptionPage(name: name, email: email, password: password)) {
-                        Text("Submit")
+                    
                         
+                        NavigationLink(destination: SubcriptionPage(name: name, email: email, password: password)) {
+                            
+                            Text("Submit")
+                            
+                            
+                        }
+                        .navigationTitle(Text("Sign Up"))
                     }
-                    .navigationTitle(Text("Sign Up"))
                 }
+                
+                .padding()
+                
             }
-            
-            .padding()
-            
         }
     }
+    #Preview {
+        ContentView()
     }
-    
-
-#Preview {
-    ContentView()
-}
