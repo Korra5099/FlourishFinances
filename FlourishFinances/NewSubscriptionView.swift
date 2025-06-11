@@ -8,8 +8,28 @@
 import SwiftUI
 
 struct NewSubscriptionView: View {
+    @State private var subscriptionTitle: String = ""
+    @State private var isImportant: Bool = false
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading, spacing: 15) {
+            Text("Subscription Name:")
+
+            TextField("Enter the subscription description...", text: $subscriptionTitle)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+
+            Toggle(isOn: $isImportant) {
+                Text("Is it important?")
+            }
+         
+            Button {
+
+            } label: {
+                    Text("Save")
+            }
+            Spacer()
+        }
+        .padding()
     }
 }
 
