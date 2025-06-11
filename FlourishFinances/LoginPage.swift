@@ -25,10 +25,12 @@ struct LoginPage: View{
                         .frame(height: nil)
                         .multilineTextAlignment(.center)
                         .font(.title)
-                    Spacer().frame(height: 250)
+                    Spacer().frame(height: 0)
                  NavigationLink(destination: ContentView()) {
                     Text("Thank You")
-                        .font(.title)
+                         .font(.title)
+                         .multilineTextAlignment(.center)
+                     
                 };
                     
                     
