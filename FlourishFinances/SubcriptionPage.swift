@@ -6,35 +6,28 @@
 //
 
 import SwiftUI
-    
-    struct SubcriptionPage: View {
 
-        @State private var taskDescription: String = ""
+struct SubscriptionPage: View {
+    var name: String
+    var email: String
+    var password: String
 
-        @State private var isImportant: Bool = false
+    var body: some View {
+        VStack(alignment: .leading, spacing: 20) {
+            Text("Subscription Page")
+                 .font(.system(size: 40))
+                 .fontWeight(.black)
+Spacer()
+            Button {
 
-
-
-        var body: some View {
-
-            VStack(alignment: .leading, spacing: 20) {
-
-                Text("Subscription:")
-
-                
-
-                TextField("Enter the subscription description...", text: $taskDescription)
-
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-
-                
-
-                Toggle("Is it important?", isOn: $isImportant)
-
+            } label: {
+                Text("+")
+                    .font(.title)
+                    .fontWeight(.bold)
             }
-
-            .padding()
-
+                
+                .padding(.top, 5)
+            }
         }
 
     }
@@ -47,3 +40,9 @@ import SwiftUI
     }
         
  
+    }
+
+
+#Preview {
+    SubscriptionPage(name: "Khira", email: "khira@example.com", password: "password123")
+}
