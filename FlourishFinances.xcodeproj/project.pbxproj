@@ -6,7 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		BD983F5A2DF9DC640082D343 /* PT2FlourishFinances.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD983F592DF9DC640082D343 /* PT2FlourishFinances.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		BD983F592DF9DC640082D343 /* PT2FlourishFinances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PT2FlourishFinances.swift; sourceTree = "<group>"; };
 		BDE52D3B2DF777F800F15C9A /* FlourishFinances.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlourishFinances.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -32,6 +37,7 @@
 		BDE52D322DF777F800F15C9A = {
 			isa = PBXGroup;
 			children = (
+				BD983F592DF9DC640082D343 /* PT2FlourishFinances.swift */,
 				BDE52D3D2DF777F800F15C9A /* FlourishFinances */,
 				BDE52D3C2DF777F800F15C9A /* Products */,
 			);
@@ -119,6 +125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD983F5A2DF9DC640082D343 /* PT2FlourishFinances.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
