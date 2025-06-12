@@ -43,7 +43,7 @@ struct SubscriptionPage: View {
             }
             .padding()
             .sheet(isPresented: $showNewSubscription) {
-                NewSubscriptionView()
+           
             }
         }
         

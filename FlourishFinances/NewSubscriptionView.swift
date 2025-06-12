@@ -2,32 +2,33 @@
 //  NewSubscriptionView.swift
 //  FlourishFinances
 //
-//  Created by Scholar on 6/11/25.
+//  Created by Scholar on 6/12/25.
 //
 
 import SwiftUI
 
 struct NewSubscriptionView: View {
-    @State private var subscriptionTitle: String = ""
-    @State private var isImportant: Bool = false
-
     var body: some View {
-        VStack(alignment: .leading, spacing: 15) {
+        VStack{
             Text("Subscription Name:")
-
-            TextField("Enter the subscription description...", text: $subscriptionTitle)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-
-            Toggle(isOn: $isImportant) {
+                .font(.title)
+                .fontWeight(.bold)
+            
+            TextField("Enter Subscription name...", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+                .padding()
+                .background(Color(.systemGroupedBackground))
+                .cornerRadius(15)
+                .padding()
+            
+            Toggle(isOn: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Is On@*/.constant(true)/*@END_MENU_TOKEN@*/) {
                 Text("Is it important?")
             }
-         
+            
             Button {
 
             } label: {
                     Text("Save")
             }
-            Spacer()
         }
         .padding()
     }
