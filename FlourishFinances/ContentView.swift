@@ -16,22 +16,48 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Form {
-                    Section(header: Text("User Info")) {
+                Color("Blue")
+                    .edgesIgnoringSafeArea(.all)
+                
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 20) {
+                        
+                        Text("User Info")
+                            .font(.headline)
+                            .padding(.top)
+                        
                         TextField("Name", text: $name)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                        
                         TextField("Email", text: $email)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                        
                         SecureField("Password", text: $password)
-                    }
 
-                    Section {
-                        NavigationLink(destination: SubscriptionView(name: name, email: email, password: password)) {
-                            Text("Submit")
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                        
+                        
+                        Section {
+                            NavigationLink(destination: SubscriptionView(name: name, email: email, password: password)) {
+                                
+                                Text("Submit")
+                                    .frame(maxWidth: .infinity)
+                                    .padding()
+                                    .background(Color.white)
+                                    .cornerRadius(10)
+                            }
+                            .padding(.top)
+                            
+                            Spacer()
+
                         }
+                        .padding()
                     }
                 }
+                .navigationTitle("Sign Up ")
+                .padding()
             }
-            .navigationTitle("Sign Up ")
-            .padding()
+
         }
     }
 }

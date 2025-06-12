@@ -25,17 +25,17 @@ struct LoginPage: View{
                         .frame(height: nil)
                         .multilineTextAlignment(.center)
                         .font(.title)
+                    Text ("To Your Wallets New Best Friend!")
+                        .font(.title)
                     Spacer().frame(height: 0)
                  NavigationLink(destination: ContentView()) {
-                    Text("Thank You")
+                    Text("Next Page")
                          .font(.title)
                          .multilineTextAlignment(.center)
-                     
-                };
-                    
-                    
-                    
                 }
+                    Spacer().frame(height: 300)
+                }
+                
             }
             
         }
