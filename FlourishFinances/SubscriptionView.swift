@@ -20,9 +20,12 @@ struct SubscriptionView: View {
             Color("green")
                 .edgesIgnoringSafeArea(.all)
         VStack{
+            Text("Welcome, \(name)")
+                .font(.system(size: 40))
+                .fontWeight(.black)
             HStack{
                 Text("Subscriptions")
-                    .font(.system(size: 40))
+                    .font(.system(size: 30))
                     .fontWeight(.black)
                 Spacer()
                 Button {
