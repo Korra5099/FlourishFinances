@@ -36,16 +36,23 @@ struct SubscriptionView: View {
             Spacer()
             List {
                 ForEach (Subscriptions) { SubItem in
-                    Text(SubItem.title)
+                    if SubItem.isImportant {
+                        Text("‼️" + SubItem.title)
+                    } else {
+                        Text(SubItem.title)
+                    }
                 }
             }
+            .listStyle(.plain) 
         }
         if showNewSub {
-            NewSubscriptionView()
+            NewSubscriptionView(showNewSub: $showNewSub, subItem: SubItem(title: "", isImportant: false))
+        
         }
     }
 }
 
 #Preview {
     SubscriptionView(name: "Khira", email: "khira@gmail.com", password: "1234")
+        .modelContainer(for: SubItem.self, inMemory: true)
 }

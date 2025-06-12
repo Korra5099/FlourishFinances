@@ -6,34 +6,44 @@
 //
 
 import SwiftUI
-
+import SwiftData
 struct NewSubscriptionView: View {
+    @Binding var showNewSub: Bool
+    @Bindable var subItem: SubItem
+    @Environment(\.modelContext) var modelContext
+    
     var body: some View {
         VStack{
             Text("Subscription Name:")
                 .font(.title)
                 .fontWeight(.bold)
             
-            TextField("Enter Subscription name...", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+            TextField("Enter Subscription name...", text: $subItem.title,axis: .vertical)
                 .padding()
                 .background(Color(.systemGroupedBackground))
                 .cornerRadius(15)
                 .padding()
             
-            Toggle(isOn: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Is On@*/.constant(true)/*@END_MENU_TOKEN@*/) {
+            Toggle(isOn: $subItem.isImportant) {
                 Text("Is it important?")
             }
             
             Button {
-
+                addSub()
+                showNewSub = false
             } label: {
                     Text("Save")
             }
         }
         .padding()
     }
+    func addSub() {
+        let subThing = SubItem(title: subItem.title, isImportant: subItem.isImportant)
+        modelContext.insert(subThing)
+    }
 }
 
 #Preview {
-    NewSubscriptionView()
+    NewSubscriptionView(showNewSub: .constant(false), subItem: SubItem(title: "", isImportant: false))
 }
+
