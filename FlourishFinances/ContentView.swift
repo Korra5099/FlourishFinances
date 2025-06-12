@@ -24,7 +24,7 @@ struct ContentView: View {
                     }
 
                     Section {
-                        NavigationLink(destination: SubscriptionPage(name: name, email: email, password: password)) {
+                        NavigationLink(destination: SubscriptionView(name: name, email: email, password: password)) {
                             Text("Submit")
                         }
                     }
