@@ -2,37 +2,48 @@
 //  NewSubscriptionView.swift
 //  FlourishFinances
 //
-//  Created by Scholar on 6/11/25.
+//  Created by Scholar on 6/12/25.
 //
 
 import SwiftUI
-
+import SwiftData
 struct NewSubscriptionView: View {
-    @State private var subscriptionTitle: String = ""
-    @State private var isImportant: Bool = false
-
+    @Binding var showNewSub: Bool
+    @Bindable var subItem: SubItem
+    @Environment(\.modelContext) var modelContext
+    
     var body: some View {
-        VStack(alignment: .leading, spacing: 15) {
+        VStack{
             Text("Subscription Name:")
-
-            TextField("Enter the subscription description...", text: $subscriptionTitle)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-
-            Toggle(isOn: $isImportant) {
+                .font(.title)
+                .fontWeight(.bold)
+            
+            TextField("Enter Subscription name...", text: $subItem.title,axis: .vertical)
+                .padding()
+                .background(Color(.systemGroupedBackground))
+                .cornerRadius(15)
+                .padding()
+            
+            Toggle(isOn: $subItem.isImportant) {
                 Text("Is it important?")
             }
-         
+            
             Button {
-
+                addSub()
+                showNewSub = false
             } label: {
                     Text("Save")
             }
-            Spacer()
         }
         .padding()
+    }
+    func addSub() {
+        let subThing = SubItem(title: subItem.title, isImportant: subItem.isImportant)
+        modelContext.insert(subThing)
     }
 }
 
 #Preview {
-    NewSubscriptionView()
+    NewSubscriptionView(showNewSub: .constant(false), subItem: SubItem(title: "", isImportant: false))
 }
+

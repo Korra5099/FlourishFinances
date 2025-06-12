@@ -34,22 +34,27 @@ struct ContentView: View {
                         
                         SecureField("Password", text: $password)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
-
-                        NavigationLink(destination: SubscriptionPage(name: name, email: email, password: password)) {
-                            Text("Submit")
-                                .frame(maxWidth: .infinity)
-                                .padding()
-                                .background(Color.white)
-                                .cornerRadius(10)
-                        }
-                        .padding(.top)
                         
-                        Spacer()
+                        
+                        Section {
+                            NavigationLink(destination: SubscriptionView(name: name, email: email, password: password)) {
+                                
+                                Text("Submit")
+                                    .frame(maxWidth: .infinity)
+                                    .padding()
+                                    .background(Color.white)
+                                    .cornerRadius(10)
+                            }
+                            .padding(.top)
+                            
+                            Spacer()
+                        }
+                        .padding()
                     }
-                    .padding()
                 }
+                .navigationTitle("Sign Up ")
+                .padding()
             }
-            .navigationTitle("Sign Up")
         }
     }
 }

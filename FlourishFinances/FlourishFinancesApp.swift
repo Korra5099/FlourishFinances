@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
-
+import SwiftData
 @main
 struct FlourishFinancesApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .modelContainer(for: SubItem.self)
         }
     }
 }
