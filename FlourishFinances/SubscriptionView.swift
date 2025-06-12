@@ -17,7 +17,7 @@ struct SubscriptionView: View {
     
     var body: some View {
         ZStack{
-            Color("green")
+            Color("Green")
                 .edgesIgnoringSafeArea(.all)
         VStack{
             Text("Welcome, \(name)")
