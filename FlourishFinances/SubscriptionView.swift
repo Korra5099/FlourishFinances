@@ -16,6 +16,9 @@ struct SubscriptionView: View {
     var password: String
     
     var body: some View {
+        ZStack{
+            Color("green")
+                .edgesIgnoringSafeArea(.all)
         VStack{
             HStack{
                 Text("Subscriptions")
@@ -46,9 +49,9 @@ struct SubscriptionView: View {
             }
             .listStyle(.plain) 
         }
-        if showNewSub {
-            NewSubscriptionView(showNewSub: $showNewSub, subItem: SubItem(title: "", isImportant: false))
-        
+            if showNewSub {
+                NewSubscriptionView(showNewSub: $showNewSub, subItem: SubItem(title: "", isImportant: false))
+            }
         }
     }
     func deleteToDo(at offsets: IndexSet) {
@@ -58,8 +61,8 @@ struct SubscriptionView: View {
         }
     }
 }
-
 #Preview {
     SubscriptionView(name: "Khira", email: "khira@gmail.com", password: "1234")
         .modelContainer(for: SubItem.self, inMemory: true)
 }
+    
