@@ -22,7 +22,7 @@ struct SubscriptionPage: View {
                 Text("Welcome, \(name)")
                     .font(.system(size: 40))
                     .fontWeight(.black)
-                .fontWeight(.black)
+                    .fontWeight(.black)
                 Text("Subscription Page")
                     .font(.system(size: 35))
                     .fontWeight(.black)
@@ -48,15 +48,9 @@ struct SubscriptionPage: View {
         }
         
     }
+    
+
+
 }
 
-struct NewSubcriptionView: View {
-    var body: some View {
-        Text("New Subscription Form")
-    }
-}
-
-#Preview {
-    SubscriptionPage(name: "Khira", email: "khira@example.com", password: "password123")
-}
 
