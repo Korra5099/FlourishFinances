@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SubscriptionView: View {
+    @State private var showNewSub = false
     var body: some View {
         VStack{
             HStack{
@@ -16,7 +17,9 @@ struct SubscriptionView: View {
                     .fontWeight(.black)
                 Spacer()
                 Button {
-
+                    withAnimation{
+                        showNewSub = true
+                    }
                 } label: {
                     Text("+")
                         .font(.title)
@@ -25,6 +28,9 @@ struct SubscriptionView: View {
             }
             .padding()
             Spacer()
+        }
+        if showNewSub {
+            NewSubscriptionView()
         }
     }
 }
