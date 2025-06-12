@@ -6,9 +6,15 @@
 //
 
 import SwiftUI
-
+import SwiftData
 struct SubscriptionView: View {
     @State private var showNewSub = false
+    @Query var Subscriptions: [SubItem]
+    
+    var name: String
+    var email: String
+    var password: String
+    
     var body: some View {
         VStack{
             HStack{
@@ -28,6 +34,11 @@ struct SubscriptionView: View {
             }
             .padding()
             Spacer()
+            List {
+                ForEach (Subscriptions) { SubItem in
+                    Text(SubItem.title)
+                }
+            }
         }
         if showNewSub {
             NewSubscriptionView()
@@ -36,5 +47,5 @@ struct SubscriptionView: View {
 }
 
 #Preview {
-    SubscriptionView()
+    SubscriptionView(name: "Khira", email: "khira@gmail.com", password: "1234")
 }
