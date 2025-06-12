@@ -33,6 +33,7 @@ struct ContentView: View {
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                         
                         SecureField("Password", text: $password)
+
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                         
                         
@@ -48,6 +49,7 @@ struct ContentView: View {
                             .padding(.top)
                             
                             Spacer()
+
                         }
                         .padding()
                     }
@@ -55,6 +57,7 @@ struct ContentView: View {
                 .navigationTitle("Sign Up ")
                 .padding()
             }
+
         }
     }
 }
