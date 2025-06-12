@@ -11,7 +11,7 @@ import SwiftData
 struct FlourishFinancesApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoginPage()
                 .modelContainer(for: SubItem.self)
         }
     }
