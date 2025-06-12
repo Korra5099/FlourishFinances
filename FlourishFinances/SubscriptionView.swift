@@ -17,9 +17,12 @@ struct SubscriptionView: View {
     
     var body: some View {
         VStack{
+            Text("Welcome, \(name)")
+                .font(.system(size: 40))
+                .fontWeight(.black)
             HStack{
                 Text("Subscriptions")
-                    .font(.system(size: 40))
+                    .font(.system(size: 30))
                     .fontWeight(.black)
                 Spacer()
                 Button {
