@@ -30,7 +30,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationTitle("Sign Up")
+            .navigationTitle("Sign Up ")
             .padding()
         }
     }
