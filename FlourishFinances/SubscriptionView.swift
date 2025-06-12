@@ -10,7 +10,7 @@ import SwiftData
 struct SubscriptionView: View {
     @State private var showNewSub = false
     @Query var Subscriptions: [SubItem]
-    
+    @Environment(\.modelContext) var modelContext
     var name: String
     var email: String
     var password: String
@@ -42,12 +42,19 @@ struct SubscriptionView: View {
                         Text(SubItem.title)
                     }
                 }
+                .onDelete(perform: deleteToDo)
             }
             .listStyle(.plain) 
         }
         if showNewSub {
             NewSubscriptionView(showNewSub: $showNewSub, subItem: SubItem(title: "", isImportant: false))
         
+        }
+    }
+    func deleteToDo(at offsets: IndexSet) {
+        for offset in offsets {
+            let subItem = Subscriptions[offset]
+            modelContext.delete(subItem)
         }
     }
 }
